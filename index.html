@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jadwal Piket 9B</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:20px;
+    color:white;
+    background:
+        radial-gradient(circle at top,#161b3d,#050510 50%,#000);
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    padding:25px 10px 15px;
+}
+
+h1{
+    font-size:32px;
+    font-weight:1000;
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff00ff,
+        #008cff,
+        #00ffff,
+        #00ff55,
+        #ffff00,
+        #ff0000
+    );
+
+    background-size:400% 100%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:rgbText 4s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(255,0,255,.5);
+}
+
+@keyframes rgbText{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.subtitle{
+    margin-top:8px;
+    color:#d0d0ff;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* =========================
+   TEKS BERJALAN
+========================= */
+
+.marquee{
+
+    overflow:hidden;
+    white-space:nowrap;
+
+    margin:18px 0;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#050505;
+
+    border:2px solid transparent;
+
+    background-image:
+        linear-gradient(#050505,#050505),
+        linear-gradient(
+            90deg,
+            #ff0000,
+            #ff00ff,
+            #0066ff,
+            #00ffff,
+            #00ff00,
+            #ffff00,
+            #ff0000
+        );
+
+    background-origin:border-box;
+    background-clip:padding-box,border-box;
+
+    box-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #0066ff,
+        0 0 30px rgba(0,255,255,.5);
+}
+
+.marquee span{
+
+    display:inline-block;
+
+    padding-left:100%;
+
+    font-family:
+        Impact,
+        Arial Black,
+        sans-serif;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff00ff,
+        #008cff,
+        #00ffff,
+        #00ff00,
+        #ffff00,
+        #ff0000
+    );
+
+    background-size:400% 100%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        jalan 9s linear infinite,
+        rgbText 3s linear infinite;
+}
+
+@keyframes jalan{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
+}
+
+/* =========================
+   ADITHYA
+========================= */
+
+.adithya{
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,0,0,.08),
+            rgba(0,255,255,.08),
+            rgba(255,0,255,.08)
+        );
+
+    border:2px solid transparent;
+
+    background-image:
+        linear-gradient(
+            rgba(10,10,20,.95),
+            rgba(10,10,20,.95)
+        ),
+        linear-gradient(
+            90deg,
+            #ff0000,
+            #ff00ff,
+            #0066ff,
+            #00ffff,
+            #00ff00,
+            #ffff00,
+            #ff0000
+        );
+
+    background-origin:border-box;
+    background-clip:padding-box,border-box;
+
+    box-shadow:
+        0 0 10px rgba(255,0,0,.5),
+        0 0 20px rgba(0,255,255,.4),
+        0 0 30px rgba(255,0,255,.3);
+
+    animation:boxRGB 4s linear infinite;
+}
+
+@keyframes boxRGB{
+
+    0%{
+        filter:hue-rotate(0deg);
+    }
+
+    50%{
+        filter:hue-rotate(180deg);
+    }
+
+    100%{
+        filter:hue-rotate(360deg);
+    }
+
+}
+
+.adithya-title{
+
+    font-family:
+        Impact,
+        Arial Black,
+        sans-serif;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    line-height:1.5;
+
+    color:white;
+}
+
+.adithya-name{
+
+    margin:8px 0;
+
+    font-family:
+        Impact,
+        Arial Black,
+        sans-serif;
+
+    font-size:30px;
+
+    font-weight:1000;
+
+    letter-spacing:3px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff00ff,
+        #008cff,
+        #00ffff,
+        #00ff00,
+        #ffff00,
+        #ff0000
+    );
+
+    background-size:400% 100%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:rgbText 3s linear infinite;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.5);
+}
+
+.card-title{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-family:
+        Impact,
+        Arial Black,
+        sans-serif;
+
+    font-size:21px;
+
+    letter-spacing:2px;
+
+    color:white;
+}
+
+/* =========================
+   HARI
+========================= */
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.day-btn{
+
+    border:none;
+
+    padding:17px 10px;
+
+    border-radius:13px;
+
+    background:#111;
+
+    color:white;
+
+    font-family:
+        Arial Black,
+        Arial,
+        sans-serif;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    border:2px solid transparent;
+
+    background-image:
+        linear-gradient(#111,#111),
+        linear-gradient(
+            90deg,
+            #ff0000,
+            #ff00ff,
+            #0066ff,
+            #00ffff,
+            #00ff00,
+            #ffff00,
+            #ff0000
+        );
+
+    background-origin:border-box;
+
+    background-clip:
+        padding-box,
+        border-box;
+
+    transition:.25s;
+
+    box-shadow:
+        0 0 8px rgba(0,255,255,.3);
+}
+
+.day-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 12px #ff00ff,
+        0 0 20px #0066ff;
+}
+
+.day-btn:active{
+
+    transform:scale(.95);
+
+}
+
+.day-btn:last-child{
+
+    grid-column:1 / 3;
+
+}
+
+/* =========================
+   HASIL
+========================= */
+
+#hasil{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:17px;
+
+    background:#070714;
+
+    border:2px solid #00ffff;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.4);
+
+    animation:muncul .4s ease;
+}
+
+@keyframes muncul{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.nama-hari{
+
+    text-align:center;
+
+    color:#00ffff;
+
+    font-family:
+        Impact,
+        Arial Black,
+        sans-serif;
+
+    font-size:25px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.nama{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:13px;
+
+    margin:8px 0;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.07);
+
+    border-left:4px solid #00ffff;
+
+    font-weight:bold;
+}
+
+.nomor{
+
+    color:#00ffff;
+}
+
+.status{
+
+    font-size:12px;
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    background:#151525;
+
+    color:#00ffff;
+
+    border:1px solid #00ffff;
+}
+
+.info{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    color:#999;
+
+    font-size:12px;
+}
+
+.back{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#111;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    border:1px solid #ff00ff;
+}
+
+.footer{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#777;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>
+            JADWAL PIKET 9B
+        </h1>
+
+        <p class="subtitle">
+            JADWAL PIKET KELAS
+        </p>
+
+    </div>
+
+
+    <!-- TEKS BERJALAN -->
+
+    <div class="marquee">
+
+        <span>
+            🔥 9B UHA • 9B UHA • 9B UHA • 9B UHA 🔥
+        </span>
+
+    </div>
+
+
+    <!-- ADITHYA -->
+
+    <div class="adithya">
+
+        <div class="adithya-title">
+            ADITHYA DILARANG PIKET
+        </div>
+
+        <div class="adithya-name">
+            KARNA BAIK
+        </div>
+
+    </div>
+
+
+    <!-- JADWAL -->
+
+    <div class="card">
+
+        <div class="card-title">
+            PILIH HARI PIKET
+        </div>
+
+        <div class="days">
+
+            <button
+                class="day-btn"
+                onclick="lihatPiket('Senin')">
+                SENIN
+            </button>
+
+            <button
+                class="day-btn"
+                onclick="lihatPiket('Selasa')">
+                SELASA
+            </button>
+
+            <button
+                class="day-btn"
+                onclick="lihatPiket('Rabu')">
+                RABU
+            </button>
+
+            <button
+                class="day-btn"
+                onclick="lihatPiket('Kamis')">
+                KAMIS
+            </button>
+
+            <button
+                class="day-btn"
+                onclick="lihatPiket('Jumat')">
+                JUMAT
+            </button>
+
+        </div>
+
+
+        <div id="hasil">
+
+            <div
+                class="nama-hari"
+                id="judulHari">
+            </div>
+
+            <div id="daftarNama">
+            </div>
+
+            <div class="info">
+                Semua nama yang tercantum wajib melaksanakan piket.
+            </div>
+
+            <button
+                class="back"
+                onclick="tutupPiket()">
+                KEMBALI
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        JADWAL PIKET KELAS 9B
+    </div>
+
+</div>
+
+
+<script>
+
+const jadwal = {
+
+    Senin: [
+        "Alya",
+        "Atifa",
+        "Diana",
+        "Orungga",
+        "Putra Sihab"
+    ],
+
+    Selasa: [
+        "Eli",
+        "Fitri",
+        "Gladic",
+        "ilham" ,
+        "ismail",
+        "Fauzan"
+    ],
+
+    Rabu: [
+        "intan",
+        "Magi",
+        "Nabila",
+        "Nugi",
+        "Rendy",
+        "Fawaz"
+    ],
+
+    Kamis: [
+        "Nurul",
+        "Ratu",
+        "Ririn",
+        "April",
+        "Eldi",
+       "Galfan"
+    ],
+
+    Jumat: [
+        "Sela",
+        "Silfa",
+        "Alma",
+        "HOREAM",
+        "Agnan"
+    ]
+
+};
+
+
+function lihatPiket(hari){
+
+    const hasil =
+        document.getElementById("hasil");
+
+    const judul =
+        document.getElementById("judulHari");
+
+    const daftar =
+        document.getElementById("daftarNama");
+
+    hasil.style.display = "block";
+
+    judul.innerHTML =
+        "PIKET HARI " +
+        hari.toUpperCase();
+
+    daftar.innerHTML = "";
+
+    jadwal[hari].forEach(function(nama,index){
+
+        const item =
+            document.createElement("div");
+
+        item.className = "nama";
+
+        item.innerHTML = `
+
+            <span>
+
+                <span class="nomor">
+                    ${index + 1}.
+                </span>
+
+                ${nama}
+
+            </span>
+
+            <span class="status">
+                WAJIB
+            </span>
+
+        `;
+
+        daftar.appendChild(item);
+
+    });
+
+    hasil.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+function tutupPiket(){
+
+    document.getElementById(
+        "hasil"
+    ).style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>
